@@ -56,3 +56,21 @@
 #         'mark_X_train_html': mark_X_train_html,
 #     }
 #     return render(request, template, context)
+
+from apistar import annotate
+from apistar import render_template
+from apistar.renderers import HTMLRenderer
+
+
+@annotate(renderers=[HTMLRenderer()])
+def home():
+    """
+    Home page that serves <a>index.html</a> template.
+    """
+    return render_template('index.html')
+
+
+def welcome(name=None):
+    if name is None:
+        return {'message': 'Welcome to API Star!'}
+    return {'message': 'Welcome to API Star, %s!' % name}

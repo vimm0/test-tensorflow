@@ -1,3 +1,4 @@
 Notebook/.ipynb_checkpoints/
 .idea/
 /env/test-tensorflow/
+__pycache__/ 
